@@ -18,3 +18,4 @@ fetch('rapidapi.com', options)
 .then(function (data) {
     console.log(data)
     });
+    
