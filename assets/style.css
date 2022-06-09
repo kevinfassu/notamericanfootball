@@ -1,0 +1,15 @@
+#hero {
+    background-image: url(./pexels-pixabay-46798.jpg);
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    background-position: center;
+}
+
+
+
+#hero-container{
+    height: 33vh;
+    width: 100%!important;
+    background-position: bottom;
+}
