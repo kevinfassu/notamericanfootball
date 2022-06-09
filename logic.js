@@ -11,9 +11,9 @@ const options = {
 fetch('rapidapi.com', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	.catch(err => console.error(err))
 .then(function (response) {
-  return response.json();
+  return response.json()
 }) 
 .then(function (data) {
     console.log(data)
