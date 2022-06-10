@@ -2,7 +2,7 @@ var searchSubmit = $("#search-submit")
 
 function handleSearchFormSubmit(event){
 	event.preventDefault();
-
+	console.log("function is starting");
 	var inputSearch = $('#searchbar').val();
 	var typeSearch = $('#modal').val();
 
