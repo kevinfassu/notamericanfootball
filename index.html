@@ -112,24 +112,65 @@
         <div class="heading relative" id="hero-container">
             <div class="bg-cover flex justify-center items-center" id="hero">
                 <form class="absolute" id="search-bar">
-                    <div class=" flex justify-center items-center p-1 px-1">
+                    <div class=" flex flex-nowrap justify-center items-center p-1 px-1">
+                        <!-- Search bar with categories and search buttons-->
                         <input type="text" name="searchbar" id="searchbar"
-                            class="py-1 focus:outline-none focus:border focus:border-amber-300 "
+                            class="py-1 focus:outline-none focus:border focus:border-amber-300 rounded pl-1"
                             placeholder="Search countries,leagues,teams...." size="55">
-                        <div class="flex space-evenly relative inline-block text-left">
-                            <button class="flex-shrink-1 bg-gray-500 text-gray-399 hover:bg-gray-700 hover:text-white-block py-1 px-2 rounded">
-                                Category<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9l-7 7-7-7"></path></svg>
-                            </button>
+                        <div class="relative text-left inline-flex">
+                            <!--Dropdown menu button-->
+                            <div>
+                                <div class="dropdown relative">
+                                    <button
+                                        class="dropdown-toggle px-2 py-2 mr-1 bg-gray-500 text-gray-399 text-xs uppercase rounded hover:bg-gray-700 hover:text-white transtion durtion-100 ease-in flex items-center no-wrap focus:outline-none"
+                                        type="button" id="dropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Category
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                            data-icon="caret-down" class="w-2 ml-2" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                            <path fill="currentColor"
+                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                            </path>
+                                        </svg>
+                                    </button>
 
-                            <button
-                                class="flex-shrink-0 bg-gray-500 text-gray-399 hover:bg-gray-700 hover:text-white-block py-1 px-1 rounded"
-                                type="button" id="search-submit">
+                                    <!--List for Dropdown Menu-->
+                                    <ul class="dropdown-menu min-w-max absolute hidden bg-gray-500 text-base z-50 float-left py-1 list-none text-center shadow-lg mt-1 border-none" aria-labelledby="dropdownBtn">
+                                        <li>
+                                            <a href="#" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                                Countries
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                                League
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                                Team
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                                Player
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+
+
+                            <button class="shrink-0 bg-gray-500 text-gray-399 hover:bg-gray-700 hover:text-white py-1 px-2
+                                px-1 rounded" type="button" id="search-submit">
                                 Search
                             </button>
 
 
-                            </div>
                         </div>
+                    </div>
                 </form>
             </div>
 
