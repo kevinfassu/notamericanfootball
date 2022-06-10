@@ -35,3 +35,15 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 	.then(function (data) {
 		console.log(data)
 	});
+
+
+	function top5 () {
+		var topArray = [top1El, top2El, top3El, top4El, top5El]
+		var top1El = $("#top-1")
+		var top2El = $("#top-2")
+		var top3El = $("#top-3")
+		var top4El = $("#top-4")
+		var top5El = $("#top-5")
+	}
+
+	
