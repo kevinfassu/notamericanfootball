@@ -1,3 +1,6 @@
+v
+
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -48,3 +51,6 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 		var top5El = $("#top-5")
 	}
 	
+	function pullSearchParams(){
+
+	}
