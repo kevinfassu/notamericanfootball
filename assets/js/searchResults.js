@@ -10,6 +10,11 @@ function pullSearchParams(){
     console.log(searchType);
     var searchInput = paramsArray[1].split('=').pop();
     console.log(searchInput);
-   // searchApi (searchType, searchInput)
+   
+     searchApi (searchType, searchInput)
 }
 pullSearchParams();
+
+function searchApi () {
+    
+}
