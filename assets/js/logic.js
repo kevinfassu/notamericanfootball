@@ -1,3 +1,8 @@
+ twitterfeed
+
+
+
+ main
 const options = {
 	method: 'GET',
 	headers: {
@@ -24,10 +29,8 @@ const twtOptions = {
 		'Authorization': 'Bearer' + 'AAAAAAAAAAAAAAAAAAAAAH01dgEAAAAADrG3yG8hXBXxOYFCAuTnI2RrB74%3DfrbGgECz6VCpDY40FDEqtaonGivL50BO9lL955EfqkDhSkbmw1'
 	}
 }
-
-
 //need to grab cors proxy again
-fetch('https://api.twitter.com/2/tweets', twtOptions)
+fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/', twtOptions)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err))
@@ -36,7 +39,10 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 	})
 	.then(function (data) {
 		console.log(data)
-	});
+	})
+	.catch((error) => console.error("FETCH ERROR", error));
+
+	
 
 
 	function top5 () {
@@ -47,4 +53,7 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 		var top4El = $("#top-4")
 		var top5El = $("#top-5")
 	}
+
+
+
 	
