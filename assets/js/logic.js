@@ -1,3 +1,7 @@
+
+
+
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -35,3 +39,30 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 	.then(function (data) {
 		console.log(data)
 	});
+
+
+//function sets params for fetch request
+//isolate those inputs from search OR when triggered by a specific page
+
+//going to teams/league pages triggers function
+//favorites  triggers function
+//search  triggers function
+
+function handleSearchFormSubmit(event){
+	event.preventDefault();
+
+	var inputSearch = $('#searchbar').val();
+	var typeSearch = $('#modal').val();
+
+	if (!inputSearch){
+		return false;
+	}
+
+	var queryString = '/' + typeSearch + 'search=' + inputSearch;
+	location.assign(queryString);
+
+
+}
+searchSubmit.submit(handleSearchFormSubmit);
+
+
