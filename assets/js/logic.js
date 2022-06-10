@@ -41,28 +41,17 @@ fetch('https://api.twitter.com/2/tweets', twtOptions)
 	});
 
 
-//function sets params for fetch request
-//isolate those inputs from search OR when triggered by a specific page
 
-//going to teams/league pages triggers function
-//favorites  triggers function
-//search  triggers function
 
-function handleSearchFormSubmit(event){
-	event.preventDefault();
 
-	var inputSearch = $('#searchbar').val();
-	var typeSearch = $('#modal').val();
 
-	if (!inputSearch){
-		return false;
+	function top5 () {
+		var topArray = [top1El, top2El, top3El, top4El, top5El]
+		var top1El = $("#top-1")
+		var top2El = $("#top-2")
+		var top3El = $("#top-3")
+		var top4El = $("#top-4")
+		var top5El = $("#top-5")
 	}
-
-	var queryString = '/' + typeSearch + 'search=' + inputSearch;
-	location.assign(queryString);
-
-
-}
-searchSubmit.submit(handleSearchFormSubmit);
 
 
