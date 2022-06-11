@@ -1,3 +1,5 @@
+function searchArray() {
+let standingsPremier;
 const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -10,34 +12,20 @@ const settings = {
 };
 
 $.ajax(settings).done(function (response) {
-	var standingsPremier =
+	standingsPremier = response;
 	console.log(response);
+	var standingSort = response.response[0].league.standings[0][1];
+// console.log(standingsPremier)
+// 	for (let i = 0; i < 5; i++) {
+// 		topArray[i] = text
+// 	}
+console.log(standingSort)
+	return standingsPremier;
 });
-
-
-const twtOptions = {
-	method: "GET",
-	headers: {
-		'Authorization': 'Bearer' + 'AAAAAAAAAAAAAAAAAAAAAH01dgEAAAAADrG3yG8hXBXxOYFCAuTnI2RrB74%3DfrbGgECz6VCpDY40FDEqtaonGivL50BO9lL955EfqkDhSkbmw1'
-	}
 }
 
-//need to grab cors proxy again
-fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/', twtOptions)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err))
-	.then(function (response) {
-		return response.json()
-	})
-	.then(function (data) {
-		console.log(data)
-	})
-	.catch((error) => console.error("FETCH ERROR", error));
-
-	
-
-
+searchArray();
+function printResults() {
 	function top5 () {
 		var topArray = [top1El, top2El, top3El, top4El, top5El]
 		var top1El = $("#top-1")
@@ -46,7 +34,27 @@ fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/',
 		var top4El = $("#top-4")
 		var top5El = $("#top-5")
 	}
+}
 
 
 
-	
+// const twtOptions = {
+// 	method: "GET",
+// 	headers: {
+// 		'Authorization': 'Bearer' + 'AAAAAAAAAAAAAAAAAAAAAH01dgEAAAAADrG3yG8hXBXxOYFCAuTnI2RrB74%3DfrbGgECz6VCpDY40FDEqtaonGivL50BO9lL955EfqkDhSkbmw1'
+// 	}
+// }
+
+// //need to grab cors proxy again
+// fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/', twtOptions)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err))
+// 	.then(function (response) {
+// 		return response.json()
+// 	})
+// 	.then(function (data) {
+// 		console.log(data)
+// 	})
+// 	.catch((error) => console.error("FETCH ERROR", error));
+
