@@ -16,9 +16,25 @@ function pullSearchParams(){
 pullSearchParams();
 
 function searchApi (searchType, searchInput) {
-    console.log(searchInput);
-    console.log(searchType);
-
+    //set up url for fetch request
     var searchUrl = `https://api-football-v1.p.rapidapi.com/v3/${searchType}?search=${searchInput}`;
     console.log(searchUrl);
-}
+
+    //use request function to call constructed url and pass in headers
+    const newRequest = new Request(searchUrl, {
+        "url": searchUrl,
+        "method": "GET",
+        "headers": {
+            "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
+            "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+        }
+    });
+
+    fetch(newRequest)
+    .then(response => response.json())
+    .then(data =>
+        {for (var i=0; i < data.response.length; i++){
+            renderResults(data.results[i]);
+        }
+        })
+}; 
