@@ -1,41 +1,50 @@
-function searchArray() {
-let standingsPremier;
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
-		"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
-	}
-};
+var champArray = [];
+var logoArray = [];
 
-$.ajax(settings).done(function (response) {
-	standingsPremier = response;
-	console.log(response);
-	var standingSort = response.response[0].league.standings[0][1];
-// console.log(standingsPremier)
-// 	for (let i = 0; i < 5; i++) {
-// 		topArray[i] = text
-// 	}
-console.log(standingSort)
-	return standingsPremier;
-});
+function searchArray() {
+	let standingSort;
+	const settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=39",
+		"method": "GET",
+		"headers": {
+			"X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
+			"X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+		}
+	};
+
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+		standingSort = response.response[0].league.standings[0];
+		console.log(standingSort)
+		for (let i = 0; i < 5; i++) {
+			console.log(standingSort[i].team);
+			var nameArray = standingSort[i].team.name;
+			var tempLogoArray = standingSort[i].team.logo;
+			champArray.push(nameArray);
+			logoArray.push(tempLogoArray)
+			console.log(champArray);
+		}
+		console.log(champArray);
+	});
+	printResults();
+	return champArray;
 }
 
 searchArray();
 function printResults() {
-//need to grab cors proxy again
-
-function top5 () {
-	var topArray = [top1El, top2El, top3El, top4El, top5El]
-		var top1El = $("#top-1")
-		var top2El = $("#top-2")
-		var top3El = $("#top-3")
-		var top4El = $("#top-4")
-		var top5El = $("#top-5")
+	console.log(champArray)
+	console.log(logoArray)
+	for (let i = 0; i < 5; i++) {
+		console.log(champArray)
+		console.log(logoArray)
 	}
+	var top1El = $("#top-1")
+	var top2El = $("#top-2")
+	var top3El = $("#top-3")
+	var top4El = $("#top-4")
+	var top5El = $("#top-5")
 }
 
 
