@@ -40,5 +40,5 @@ function searchApi (searchType, searchInput) {
 
 function renderResults(resultObj){
     console.log(resultObj);
-    var resultsCard = 
+    var resultsCard =  ""
 }
