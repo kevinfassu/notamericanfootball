@@ -106,39 +106,39 @@
                                     </button>
 
                                     <!--List for Dropdown Menu-->
-                                    <ul class="dropdown-menu min-w-max absolute hidden bg-gray-500 text-base z-50 float-left py-1 list-none text-center shadow-lg mt-1 border-none"
-                                        aria-labelledby="dropdownBtn">
-                                        <li>
-                                            <a href="#"
-                                                class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
-                                                Countries
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
-                                                League
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
-                                                Team
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
-                                                Player
-                                            </a>
-                                        </li>
+                                    <div class="dropdown-menu min-w-max absolute hidden bg-gray-500 text-base z-50 float-left py-1 list-none text-center shadow-lg mt-1 border-none"
+                                        aria-labelledby="dropdownBtn" id="drop-down-menu">
 
-                                    </ul>
+                                        <section id="country-btn"
+                                            class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                            Countries
+                                        </section>
+
+
+                                        <section id="league-btn"
+                                            class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                            League
+                                        </section>
+
+
+                                        <section id="team-btn"
+                                            class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                            Team
+                                        </section>
+
+
+                                        <section id="player-btn"
+                                            class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
+                                            Player
+                                        </section>
+
+
+                                    </div>
 
                                 </div>
                             </div>
 
-
+                            <!--Search Button for Submit-->
                             <button class="shrink-0 bg-gray-500 text-gray-399 hover:bg-gray-700 hover:text-white py-1 px-2
                                 px-1 rounded" type="button" id="search-submit">
                                 Search
@@ -164,7 +164,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+    <script src="./assets/js/script.js"></script>
     <script type="text/javascript" src="./assets/js/logic.js"></script>
 </body>
 
