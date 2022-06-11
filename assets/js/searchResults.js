@@ -22,7 +22,6 @@ function searchApi (searchType, searchInput) {
 
     //use request function to call constructed url and pass in headers
     const newRequest = new Request(searchUrl, {
-        "url": searchUrl,
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
@@ -38,3 +37,7 @@ function searchApi (searchType, searchInput) {
         }
         })
 }; 
+
+function renderResults(resultObj){
+    console.log(resultObj);
+}
