@@ -11,23 +11,21 @@ const settings = {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
+    countriesSort = response.response;
+    console.log(countriesSort)
+    for (let i = 0; i < 16; i++) {
+
+    console.log(countriesSort [i]);
+    var nameArray = countriesSort[i].name;
+    var flagArray = countriesSort[i].flag;
+    var countryArray = [];
+    var logoArray = [];
+
+    countryArray.push(nameArray);
+    logoArray.push(flagArray);
+    console.log(nameArray);
+    console.log(flagArray);
+    }
+    
 });
 
-
-
-
-
-
-function displayCountries(data) {
-    const countries = data.name[0];
-    const countriesDiv = document.getElementById("countries");
-    
-  
-  const countriesName = cocktail.strDrink;
-  const heading = document.createElement("h1");
-  heading.innerHTML = cocktailName;
-  cocktailDiv.appendChild(heading);
-  //const cocktailImg = document.createElement("img");
-  //cocktailImg.src = cocktail.strDrinkThumb;
-  //cocktailDiv.appendChild(cocktailImg);
-  //document.body.style.backgroundImage = "url('" + cocktail.strDrinkThumb + "')";
