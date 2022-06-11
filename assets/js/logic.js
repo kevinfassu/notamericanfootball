@@ -23,7 +23,7 @@ const twtOptions = {
 }
 
 //need to grab cors proxy again
-fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/', twtOptions)
+fetch('https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/', twtOptions)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err))
@@ -46,6 +46,10 @@ fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/',
 		var top4El = $("#top-4")
 		var top5El = $("#top-5")
 	}
+	
+	
+
+
 
 
 
