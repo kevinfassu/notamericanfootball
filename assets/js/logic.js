@@ -1,8 +1,3 @@
- twitterfeed
-
-
-
- main
 const options = {
 	method: 'GET',
 	headers: {
@@ -53,6 +48,7 @@ fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/',
 		var top4El = $("#top-4")
 		var top5El = $("#top-5")
 	}
+	
 
 
 
