@@ -1,4 +1,4 @@
-var searchSubmit = $("#search-submit")
+var searchSubmit = $("#search-submit");
 
 function handleSearchFormSubmit(event){
 	event.preventDefault();
@@ -6,13 +6,13 @@ function handleSearchFormSubmit(event){
 	var inputSearch = $('#searchbar').val();
 	var typeSearch = $('#modal').val();
 
-	if (!inputSearch){
-		return false;
-	}
+	// if (!inputSearch){
+	// 	return false;
+	// }
 
-	var queryString = '/' + typeSearch + 'search=' + inputSearch;
+	var queryString =  './searchResults.html?endpoint=' + "teams"+ '&search=' + "Manchester";
 	location.assign(queryString);
 
 
 }
-searchSubmit.submit(handleSearchFormSubmit);
+searchSubmit.on("click",handleSearchFormSubmit);
