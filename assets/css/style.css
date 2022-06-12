@@ -1,3 +1,27 @@
+.top5PremierLeague {
+    position: relative;
+    bottom: -395px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.topDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkslategray;
+    border-radius: 5px;
+}
+
+.topDivs p {
+    position: relative;
+    top: -10px;
+    background-color: darkslategray;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 #hero {
     background-image: url(\pexels-pixabay-46798.jpg);
     background-size: cover;
@@ -5,7 +29,6 @@
     width: 100%;
     background-position: center;
 }
-
 
 
 #hero-container{
