@@ -13,3 +13,21 @@
     width: 100%!important;
     background-position: bottom;
 }
+
+
+#open-btn {
+margin:auto
+}
+
+#button-id {
+    margin-top: 25%;
+    align-content: center;
+}
+
+#popup-modal {
+    margin:auto;
+}
+
+#modal-btn{
+    margin:auto
+}
