@@ -1,5 +1,11 @@
 var champArray = [];
 var logoArray = [];
+var index = 0;
+let strChamp;
+let htmlImg;
+let htmlChamp;
+
+searchArray();
 
 function searchArray() {
 	let standingSort;
@@ -24,27 +30,58 @@ function searchArray() {
 			var tempLogoArray = standingSort[i].team.logo;
 			champArray.push(nameArray);
 			logoArray.push(tempLogoArray)
-			console.log(champArray);
+			strChamp = JSON.stringify(champArray[i]);
+			var strImg = JSON.stringify(logoArray[i])
+			htmlChamp = strChamp.replaceAll("\"", "");
+			htmlImg = strImg.replaceAll("\"", "");
+			console.log(htmlImg);
+			console.log(htmlChamp);
+			printResults(htmlChamp);
 		}
+
 		console.log(champArray);
 	});
-	printResults();
-	return champArray;
 }
 
-searchArray();
 function printResults() {
-	console.log(champArray)
-	console.log(logoArray)
-	for (let i = 0; i < 5; i++) {
-		console.log(champArray)
-		console.log(logoArray)
+
+	console.log(index);
+
+	var topEl1 = document.getElementById("top-1")
+	var topEl2 = document.getElementById("top-2")
+	var topEl3 = document.getElementById("top-3")
+	var topEl4 = document.getElementById("top-4")
+	var topEl5 = document.getElementById("top-5")
+	var imgEl1 = document.getElementById("img-1")
+	var imgEl2 = document.getElementById("img-2")
+	var imgEl3 = document.getElementById("img-3")
+	var imgEl4 = document.getElementById("img-4")
+	var imgEl5 = document.getElementById("img-5")
+
+
+	if (index === 0) {
+		imgEl1.src = htmlImg;
+		topEl1.textContent = htmlChamp;
+		console.log("1El Appended",htmlChamp, imgEl1)
+	} else if (index === 1) {
+		imgEl2.src = htmlImg;
+		topEl2.textContent = htmlChamp;
+		console.log("2El Appended",htmlChamp, imgEl2)
+	} else if (index === 2) {
+		imgEl3.src = htmlImg;
+		topEl3.textContent = htmlChamp;
+		console.log("3El Appended",htmlChamp, imgEl3)
+	} else if (index === 3) {
+		imgEl4.src = htmlImg;
+		topEl4.textContent = htmlChamp;
+		console.log("4El Appended",htmlChamp,imgEl4)
+	} else if (index === 4) {
+		imgEl5.src = htmlImg;
+		topEl5.textContent = htmlChamp;
+		console.log("5El Appended",htmlChamp,imgEl5)
 	}
-	var top1El = $("#top-1")
-	var top2El = $("#top-2")
-	var top3El = $("#top-3")
-	var top4El = $("#top-4")
-	var top5El = $("#top-5")
+	index++;
+	return;
 }
 
 
@@ -53,9 +90,9 @@ function printResults() {
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err))
 // 	.then(function (response) {
-// 		return response.json()
-// 	})
-// 	.then(function (data) {
+	// 		return response.json()
+	// 	})
+	// 	.then(function (data) {
 // 		console.log(data)
 // 	})
 // 	.catch((error) => console.error("FETCH ERROR", error));
