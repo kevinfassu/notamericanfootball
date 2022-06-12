@@ -73,5 +73,6 @@ function renderResults(resultObj) {
         var flagEl = $("<img></img").attr("src", resultObj.flag);
     }
     /// add appends
+    ///tomorrow double check league parameters and player parameters to add to render function if time
 }
 
