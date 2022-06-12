@@ -42,12 +42,14 @@ function searchApi(searchType, searchInput) {
 
 function renderResults(resultObj) {
     console.log(resultObj);
-    if(resultObj)
+    if("team" in resultObj){
+    var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
+    var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+    var cardTitleEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
     
-    var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo("#search-content");
-    var cardTitleEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900").appendTo(resultsCard);
     cardTitleEl.text(resultObj.team.name);
-    var logoEl = $("<img></img").attr("src", resultObj.team.logo);
+    var logoEl = $("<img></img").attr("src", resultObj.team.logo)
+    
     var countryEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         countryEl.text(resultObj.team.country);
     var dateEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
@@ -58,8 +60,18 @@ function renderResults(resultObj) {
         cityNameEl.text(resultObj.venue.city);
     var capacitySizeEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         capacitySizeEl.text(resultObj.venue.capacity);
-    
-   
-    
+    ///add appends
+    } else {
+        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
+        var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+        var countryName = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
+        countryName.text(resultObj.name);
+
+        var abbrevEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        abbrevEl.text(resultObj.code);
+
+        var flagEl = $("<img></img").attr("src", resultObj.flag);
+    }
+    /// add appends
 }
 
