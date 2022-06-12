@@ -42,14 +42,23 @@ function searchApi(searchType, searchInput) {
 
 function renderResults(resultObj) {
     console.log(resultObj);
+    if(resultObj)
+    
     var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo("#search-content");
     var cardTitleEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900").appendTo(resultsCard);
     cardTitleEl.text(resultObj.team.name);
-    var logoEl = $("<img></img").attr("src");
-        logoEl.text(resultObj.team.logo);
+    var logoEl = $("<img></img").attr("src", resultObj.team.logo);
     var countryEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         countryEl.text(resultObj.team.country);
-    var dateEl = $()
+    var dateEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        dateEl.text(resultObj.team.founded);
+    var venueTitleEl = $("<h4></h4>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
+        venueTitleEl.text(resultObj.venue.name);
+    var cityNameEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        cityNameEl.text(resultObj.venue.city);
+    var capacitySizeEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        capacitySizeEl.text(resultObj.venue.capacity);
+    
    
     
 }
