@@ -42,28 +42,86 @@ function searchApi(searchType, searchInput) {
 
 function renderResults(resultObj) {
     console.log(resultObj);
-    if("team" in resultObj){
-    var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
-    var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
-    var cardTitleEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
-    
-    cardTitleEl.text(resultObj.team.name);
-    var logoEl = $("<img></img").attr("src", resultObj.team.logo)
-    
-    var countryEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+    if ("team" in resultObj) {
+        var resultBody = $("<div></div").attr("class", "flex ").appendTo("#search-content");
+        var resultsCard = $("<div></div>").attr("class", "inline-block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+        var cardTitleEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
+
+        cardTitleEl.text(resultObj.team.name);
+        var logoEl = $("<img></img").attr("src", resultObj.team.logo)
+
+        var countryEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         countryEl.text(resultObj.team.country);
-    var dateEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+       
+        var dateEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         dateEl.text(resultObj.team.founded);
-    var venueTitleEl = $("<h4></h4>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
+        
+        var venueTitleEl = $("<h4></h4>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
         venueTitleEl.text(resultObj.venue.name);
-    var cityNameEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+       
+        var cityNameEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         cityNameEl.text(resultObj.venue.city);
-    var capacitySizeEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+       
+        var capacitySizeEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
         capacitySizeEl.text(resultObj.venue.capacity);
-    ///add appends
-    } else {
+
+        resultBody.append(cardTitleEl, logoEl, countryEl, dateEl, venueTitleEl, cityNameEl, capacitySizeEl);
+
+
+    } else if ("league" in resultObj) {
         var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
-        var resultsCard = $("<div></div>").attr( "class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+        var resultsCard = $("<div></div>").attr("class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+
+        var leagueNameEl = $("<h4></h4>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
+        leagueNameEl.text(resultObj.league.name);
+       
+        var leagueLogo = ("<img></img").attr("src", resultObj.league.logo);
+
+        var countryEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        countryEl.text(resultObj.country.name)
+       
+        var countryFlag = ("<img></img").attr("src", resultObj.country.flag);
+
+        resultBody.append(leagueNameEl, leagueLogo, countryEl, countryFlag)
+
+
+
+
+
+    } else if ("player" in resultObj) {
+        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
+        var resultsCard = $("<div></div>").attr("class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+
+        var playerNameEl = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900");
+        playerNameEl.text(resultObj.player.firstname + resultObj.player.lastname);
+       
+        var playerAgeEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        playerAgeEl.text(resultObj.player.age)
+        
+        var playerNationalityEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        playerNationalityEl.text(resultObj.player.nationality);
+       
+        var playerHieghtEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        playerHieghtEl.text(resultObj.player.height);
+        
+        var playerWeightEl = $("<p></p>").attr("class", "font-normal, mb-1, text-stone-500");
+        playerWeightEl.text(resultObj.player.weight);
+
+        if (!resultObj.player.injured) {
+            var playerInjuries = $("<p>Player is currently: uninjured</p>").attr("class", "font-normal, mb-1, text-stone-500");
+        } else {
+            var playerInjuries = $("<p>Player is currently: injured</p>").attr("class", "font-normal, mb-1, text-stone-500");
+        }
+        var playerImgEl = $("<img></img").attr("src", resultObj.player.photo);
+
+        resultBody.append(playerNameEl, playerAgeEl, playerNationalityEl, playerHieghtEl, playerWeightEl, playerInjuries, playerImgEl);
+    }
+
+
+    else {
+        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
+        var resultsCard = $("<div></div>").attr("class", "block p-4 max-w-md bg-stone-300 border-gray-200 shadow-sm hover:bg-stone-500").appendTo(resultBody);
+      
         var countryName = $("<h3></h3>").attr("class", "mb-3 text-lg font-semibold text-gray-900")
         countryName.text(resultObj.name);
 
@@ -71,8 +129,7 @@ function renderResults(resultObj) {
         abbrevEl.text(resultObj.code);
 
         var flagEl = $("<img></img").attr("src", resultObj.flag);
+        resultBody.append(countryName, abbrevEl, flagEl);
     }
-    /// add appends
-    ///tomorrow double check league parameters and player parameters to add to render function if time
 }
 
