@@ -1,5 +1,7 @@
 pullSearchParams();
 
+var index = 0;
+
 function pullSearchParams() {
     //getting search params out of URL into an array
     var paramsArray = document.location.search.split('&');
@@ -8,18 +10,18 @@ function pullSearchParams() {
     var paramChecker = document.location.search;
     console.log(paramChecker)
     if (paramChecker === '') {
-        displayAllTeam();   
+        displayAllTeam();
     } else {
         var teamId = paramsArray[0].split('=').pop();
         console.log(teamId);
         var leagueId = paramsArray[1].split('=').pop();
         console.log(leagueId);
-        
+
         // searchApi(teamId, leagueId)
         console.log(teamId)
         console.log(leagueId)
-        var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?season=2021&team=${teamId}&league=${leagueId}`
-        
+        var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?season=2021&league=${leagueId}`
+
         const newRequest = new Request(teamURL, {
             "method": "GET",
             "headers": {
@@ -27,13 +29,13 @@ function pullSearchParams() {
                 "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
             }
         });
-        
+
         fetch(newRequest)
-        .then(response => response.json())
-        .then(data => {
-            dataIterator(data.response);
-            console.log(data)
-        })
+            .then(response => response.json())
+            .then(data => {
+                dataIterator(data.response);
+                console.log(data)
+            })
     }
 }
 
@@ -49,7 +51,7 @@ function dataIterator(resultObj) {
     var leagueNameEl = document.getElementById("leagueName")
     var leagueLogoEl = document.getElementById("leagueLogo")
     var leagueCountryEl = document.getElementById("leagueCountry")
-    
+
     var leagueLogo = resultObj.league.logo.replaceAll("\"", "");
     console.log(leagueLogo)
     var leagueName = resultObj.league.name.replaceAll("\"", "");
@@ -59,70 +61,114 @@ function dataIterator(resultObj) {
     var teamName = resultObj.team.name.replaceAll("\"", "");
     console.log(teamName)
     var teamLogo = resultObj.team.logo.replaceAll("\"", "");
-            console.log(teamLogo)
-            var winStreak = resultObj.biggest.streak.wins;
-            console.log(winStreak)
-            var loseStreak = resultObj.biggest.streak.loses;
-            console.log(loseStreak)
-            var drawStreak = resultObj.biggest.streak.draws;
-            console.log(drawStreak)
-            
-            teamNameEl.textContent = teamName;
-            teamLogoEl.src = teamLogo;
-            winStreakEl.textContent = winStreak;
-            loseStreakEl.textContent = loseStreak;
-            drawStreakEl.textContent = drawStreak;
-            leagueNameEl.textContent = leagueName;
-            leagueLogoEl.src = leagueLogo;
-            leagueCountryEl.textContent = leagueCountry;
-            
-        }
-        
-        function displayAllTeam() {
-            console.log("DisplayAllTeam Function started")
-            document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
-            var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams/`
-        
-            const newRequest = new Request(teamURL, {
-                "method": "GET",
-                "headers": {
-                    "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
-                    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
-                }
-            });
-            
-            fetch(newRequest)
+    console.log(teamLogo)
+    var winStreak = resultObj.biggest.streak.wins;
+    console.log(winStreak)
+    var loseStreak = resultObj.biggest.streak.loses;
+    console.log(loseStreak)
+    var drawStreak = resultObj.biggest.streak.draws;
+    console.log(drawStreak)
+
+    teamNameEl.textContent = teamName;
+    teamLogoEl.src = teamLogo;
+    winStreakEl.textContent = winStreak;
+    loseStreakEl.textContent = loseStreak;
+    drawStreakEl.textContent = drawStreak;
+    leagueNameEl.textContent = leagueName;
+    leagueLogoEl.src = leagueLogo;
+    leagueCountryEl.textContent = leagueCountry;
+
+}
+
+function displayAllTeam() {
+    console.log("DisplayAllTeam Function started")
+    document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
+
+    var leagueParameter = [39, 78, 140, 88, 262]
+
+    for (let i = 0; i < 5; i++) {
+        console.log(leagueParameter[i])
+        var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${leagueParameter[i]}&season=2021`
+
+        const newRequest = new Request(teamURL, {
+            "method": "GET",
+            "headers": {
+                "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
+                "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+            }
+        });
+
+        fetch(newRequest)
             .then(response => response.json())
             .then(data => {
                 allTeamIterator(data.response);
                 console.log(data)
             })
+    }
+}
+
+
+function allTeamIterator(resultObj) {
+    if (index === 0) {
+        console.log(resultObj)
+        for (let i = 0; i < resultObj.length; i++) {
+            var teamName = resultObj[i].team.name;
+            console.log(teamName)
         }
-
-
-        function allTeamIterator(resultObj) {
-        console.log(resultObj);
-         
+        index++;
+        return;
+    } else if (index === 1) {
+        console.log(resultObj)
+        for (let i = 0; i < resultObj.length; i++) {
+            var teamName = resultObj[i].team.name;
+            var teamLogo = resultObj[i].team.logo;
+            console.log(teamName)
         }
-                
+        index++;
+        return;
+    } else if (index === 2) {
+        console.log(resultObj)
+        for (let i = 0; i < resultObj.length; i++) {
+            var teamName = resultObj[i].team.name;
+            var teamLogo = resultObj[i].team.logo;
+            console.log(teamName)
+        }
+        index++;
+        return;
+    } else if (index === 3) {
+        console.log(resultObj)
+        for (let i = 0; i < resultObj.length; i++) {
+            var teamName = resultObj[i].team.name;
+            var teamLogo = resultObj[i].team.logo;
+            console.log(teamName)
+        }
+        index++;
+        return;
+    } else if (index === 4) {
+        console.log(resultObj)
+        for (let i = 0; i < resultObj.length; i++) {
+            var teamName = resultObj[i].team.name;
+            var teamLogo = resultObj[i].team.logo;
+            console.log(teamName)
+        }
+        index++;
+        return;
+    }
+}
 
 
+let modal = document.getElementById("popup-modal");
 
+let btn = document.getElementById("open-btn");
 
+let button = document.getElementById("no-btn");
 
+btn.onclick = function () {
+    modal.style.display = "block";
+}
 
-                let modal = document.getElementById("popup-modal");
-                
-                let btn = document.getElementById("open-btn");
-                
-                let button = document.getElementById("no-btn");
-                
-                btn.onclick = function () {
-                    modal.style.display = "block";
-                }
-                
-                button.onclick = function () {
-                    modal.style.display = "none";
+button.onclick = function () {
+    modal.style.display = "none";
 }
 
 window.onclick = function (event) {
