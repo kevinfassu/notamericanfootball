@@ -53,7 +53,50 @@
     line-height: 1.5;
 }
 
+.teamCard {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px#C1C3C1;
+    display: flex;
+    flex: 0 3 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
+
+.teamCard h3{
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    display: grid;
+    align-items: center;
+}
+
+.teamCard h4{
+    font-family: "Karla", sans-serif;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+}
+
+.teamCard img{
+    border-radius: 5px;
+    margin-bottom: 17px;
+    max-width: 100%;
+    height: auto;
+}
+
+.teamCard p {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
 
 
 
@@ -132,7 +175,6 @@ margin:auto
 }
 
 #button-id {
-    margin-top: 25%;
     align-content: center;
 }
 
