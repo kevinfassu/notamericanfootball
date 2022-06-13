@@ -3,6 +3,7 @@
     bottom: -395px;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 20px;
 }
 
 .topDivs {
@@ -20,6 +21,35 @@
     color: white;
     padding: 5px;
     border-radius: 5px;
+}
+
+.topDivs img {
+    padding-bottom: 5px;
+}
+
+.premierHeader img {
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.premierHeader h2 {
+    background-color: cadetblue;
+    color: darkmagenta;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.premierHeader {
+    position: relative;
+    display: flex;
+    bottom: -385px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 #hero {
