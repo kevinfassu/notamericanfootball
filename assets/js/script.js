@@ -1,18 +1,30 @@
-var searchSubmit = $("#search-submit")
+var searchSubmit = $("#search-submit");
+let type;
+
+function dropDownVal(event){
+	var	categoryCapture = event.target;
+     type = $(categoryCapture).text().trim();
+    return;
+}
+
 
 function handleSearchFormSubmit(event){
 	event.preventDefault();
 	console.log("function is starting");
 	var inputSearch = $('#searchbar').val();
-	var typeSearch = $('#modal').val();
+	 var typeSearch = type;
 
-	if (!inputSearch){
-		return false;
-	}
+	// if (!inputSearch){
+	// 	return false;
+	// }
 
-	var queryString = '/' + typeSearch + 'search=' + inputSearch;
-	location.assign(queryString);
+	 var queryString =  './searchResults.html?endpoint=' + typeSearch + '&search=' + inputSearch;
+	 location.assign(queryString);
 
 
 }
-searchSubmit.submit(handleSearchFormSubmit);
+
+
+
+$('#drop-down-menu section').click(dropDownVal);
+searchSubmit.on("click",handleSearchFormSubmit);

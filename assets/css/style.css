@@ -1,3 +1,159 @@
+.card-row{
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    justify-content: space-between;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.card{
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px#C1C3C1;
+    display: flex;
+    flex: 0 3 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+.card h3{
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    display: grid;
+    align-items: center;
+}
+
+.card h4{
+    font-family: "Karla", sans-serif;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+}
+
+.card img{
+    border-radius: 5px;
+    margin-bottom: 17px;
+    max-width: 100%;
+    height: auto;
+}
+
+.card p {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.teamCard {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px#C1C3C1;
+    display: flex;
+    flex: 0 3 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.teamCard h3{
+    font-family: 'Karla',sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    display: grid;
+    align-items: center;
+}
+
+.teamCard h4{
+    font-family: "Karla", sans-serif;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+}
+
+.teamCard img{
+    border-radius: 5px;
+    margin-bottom: 17px;
+    max-width: 100%;
+    height: auto;
+}
+
+.teamCard p {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+
+.top5PremierLeague {
+    position: relative;
+    bottom: -395px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.topDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkslategray;
+    border-radius: 5px;
+}
+
+.topDivs p {
+    position: relative;
+    top: -10px;
+    background-color: darkslategray;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.topDivs img {
+    padding-bottom: 5px;
+}
+
+.premierHeader img {
+    background-color: cadetblue;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.premierHeader h2 {
+    background-color: cadetblue;
+    color: darkmagenta;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.premierHeader {
+    position: relative;
+    display: flex;
+    bottom: -385px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
 #hero {
     background-image: url(\pexels-pixabay-46798.jpg);
     background-size: cover;
@@ -7,9 +163,76 @@
 }
 
 
-
 #hero-container{
     height: 33vh;
     width: 100%!important;
     background-position: bottom;
 }
+
+
+#open-btn {
+margin:auto
+}
+
+#button-id {
+    align-content: center;
+}
+
+#popup-modal {
+    margin:auto;
+}
+
+#modal-btn{
+    margin:auto
+}
+
+#show-title{
+    font-size: 35px;
+    font-family: "Karla", sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#video-render{
+    position: relative;
+    bottom: -500px;
+    padding-bottom: 60px;
+}
+
+#video-render h3{
+    font-size: 30px;
+    font-family: 'Karla', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+@media screen and(max-width: 1500px){
+    .card-row {
+        grid-template-columns: 25% 25% 
+        }
+}
+
+
+
+@media screen and (max-width: 992px) {
+   .card-row {
+    grid-template-columns: 30% 30% 
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .card-row{
+        grid-template-columns: 50% 50%;
+    }
+  }
+  
+
+  @media screen and (max-width: 576px) {
+    .card-row {
+        grid-template-columns: 75%
+    }
+  }
