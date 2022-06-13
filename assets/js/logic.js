@@ -109,23 +109,6 @@ function printResults() {
 }
 
 
-// fetch('https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/', twtOptions)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err))
-// 	.then(function (response) {
-	// 		return response.json()
-	// 	})
-	// 	.then(function (data) {
-// 		console.log(data)
-// 	})
-// 	.catch((error) => console.error("FETCH ERROR", error));
-
-
-
-
-
-
 // const twtOptions = {
 // 		method: "GET",
 // 	 	headers: {
@@ -133,18 +116,40 @@ function printResults() {
 // 			}
 //  }
 
-// //need to grab cors proxy again
-//  fetch('https://cors-anywhere.herokuapp.com/corsdemo/https://api.twitter.com/2/', twtOptions)
-// 	.then(response => response.json())
-//  	.then(response => console.log(response))
-// 	.catch(err => console.error(err))
-//  	.then(function (response) {
-//  		return response.json()
-//  	})
-//  	.then(function (data) {
-// 		console.log(data)
-//  	})
-//  	.catch((error) => console.error("FETCH ERROR", error));
+// // //need to grab cors proxy again
+  fetch('https://www.scorebat.com/video-api/v3/feed/?token=MjA4MzJfMTY1NTA5MjAzOV84YWM3ZGQ3MzA5NDY2YjIzMTIwZjAzYTNiNDhhNmYxMWFmYzNlYTBm')
+  .then(response => response.json())
+  .then(data => {
+	for(let i=0; i < 8; i++ ){
+		renderVids(data.response[i])
+	}
+  });
+
+
+function renderVids(resultObj){
+	var videoBody = $("<div></div").attr("class", "card").appendTo("#video-card");
+        var videoCard = $("<div></div>").appendTo(videoBody);
+
+		var videoTitle = $("<h3></h3>");
+		videoTitle.text(resultObj.title);
+
+		var compTitle = $("<p></p>");
+		compTitle.text(resultObj.competition);
+
+		var videoEmbed =$(resultObj.videos[0].embed) 
+		console.log(resultObj.videos[0].embed);
+
+		videoBody.append(videoTitle, compTitle, videoEmbed);
+
+}
+  
+
+
+// iterate through for competition, title, date, video.embed
+
+//create divs .card class
+//append data to divs
+
 
 
 
