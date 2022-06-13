@@ -150,6 +150,23 @@ margin:auto
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#video-render{
+    position: relative;
+    bottom: -500px;
+    padding-bottom: 60px;
+}
+
+#video-render h3{
+    font-size: 30px;
+    font-family: 'Karla', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
 @media screen and(max-width: 1500px){
     .card-row {
         grid-template-columns: 25% 25% 
