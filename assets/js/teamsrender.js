@@ -81,20 +81,36 @@ function dataIterator(resultObj) {
         function displayAllTeam() {
             console.log("DisplayAllTeam Function started")
             document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
-        }
+            var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams/`
         
-        //     .then(response => response.json()){
-            //         console.log(response);
-            //     })    
-            //     .catch(err => {
-                //         console.log(err);
-                //     });    
+            const newRequest = new Request(teamURL, {
+                "method": "GET",
+                "headers": {
+                    "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
+                    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+                }
+            });
+            
+            fetch(newRequest)
+            .then(response => response.json())
+            .then(data => {
+                allTeamIterator(data.response);
+                console.log(data)
+            })
+        }
+
+
+        function allTeamIterator(resultObj) {
+        console.log(resultObj);
+         
+        }
                 
-                // }    
-                
-                
-                
-                
+
+
+
+
+
+
                 let modal = document.getElementById("popup-modal");
                 
                 let btn = document.getElementById("open-btn");
