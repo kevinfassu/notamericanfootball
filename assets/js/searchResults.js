@@ -69,15 +69,15 @@ function renderResults(resultObj) {
 
 
     } else if ("league" in resultObj) {
-        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
-        var resultsCard = $("<div></div>").attr("class", "card").appendTo(resultBody);
+        var resultBody = $("<div></div").attr("class", "card").appendTo("#search-content");
+        var resultsCard = $("<div></div>").appendTo(resultBody);
 
-        var leagueNameEl = $("<h4></h4>").attr("class", "card")
+        var leagueNameEl = $("<h4></h4>")
         leagueNameEl.text(resultObj.league.name);
        
         var leagueLogo = ("<img></img").attr("src", resultObj.league.logo);
 
-        var countryEl = $("<p></p>").attr("class", "card");
+        var countryEl = $("<p></p>");
         countryEl.text(resultObj.country.name)
        
         var countryFlag = ("<img></img").attr("src", resultObj.country.flag);
@@ -89,28 +89,28 @@ function renderResults(resultObj) {
 
 
     } else if ("player" in resultObj) {
-        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
-        var resultsCard = $("<div></div>").attr("class", "card").appendTo(resultBody);
+        var resultBody = $("<div></div").attr("class", "card").appendTo("#search-content");
+        var resultsCard = $("<div></div>").appendTo(resultBody);
 
-        var playerNameEl = $("<h3></h3>").attr("class", "card");
+        var playerNameEl = $("<h3></h3>")
         playerNameEl.text(resultObj.player.firstname + resultObj.player.lastname);
        
-        var playerAgeEl = $("<p></p>").attr("class", "card");
+        var playerAgeEl = $("<p></p>")
         playerAgeEl.text(resultObj.player.age)
         
-        var playerNationalityEl = $("<p></p>").attr("class", "card");
+        var playerNationalityEl = $("<p></p>")
         playerNationalityEl.text(resultObj.player.nationality);
        
-        var playerHieghtEl = $("<p></p>").attr("class", "card");
+        var playerHieghtEl = $("<p></p>")
         playerHieghtEl.text(resultObj.player.height);
         
-        var playerWeightEl = $("<p></p>").attr("class", "card");
+        var playerWeightEl = $("<p></p>")
         playerWeightEl.text(resultObj.player.weight);
 
         if (!resultObj.player.injured) {
-            var playerInjuries = $("<p>Player is currently: uninjured</p>").attr("class", "card");
+            var playerInjuries = $("<p>Player is currently: uninjured</p>")
         } else {
-            var playerInjuries = $("<p>Player is currently: injured</p>").attr("class", "card");
+            var playerInjuries = $("<p>Player is currently: injured</p>")
         }
         var playerImgEl = $("<img></img").attr("src", resultObj.player.photo);
 
@@ -119,17 +119,17 @@ function renderResults(resultObj) {
 
 
     else {
-        var resultBody = $("<div></div").attr("class", "flex").appendTo("#search-content");
-        var resultsCard = $("<div></div>").attr("class", "card").appendTo(resultBody);
+        var resultBody = $("<div></div").attr("class", "card").appendTo("#search-content");
+        var resultsCard = $("<div></div>").appendTo(resultBody);
       
-        var countryName = $("<h3></h3>").attr("class", "card")
+        var countryName = $("<h3></h3>")
         countryName.text(resultObj.name);
 
-        var abbrevEl = $("<p></p>").attr("class", "card");
+        var abbrevEl = $("<p></p>")
         abbrevEl.text(resultObj.code);
 
         var flagEl = $("<img></img").attr("src", resultObj.flag);
         resultBody.append(countryName, abbrevEl, flagEl);
     }
-}
+};
 
