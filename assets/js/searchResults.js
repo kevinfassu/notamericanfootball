@@ -48,7 +48,7 @@ function renderResults(resultObj) {
         var cardTitleEl = $("<h3></h3>")
 
         cardTitleEl.text(resultObj.team.name);
-        var logoEl = $("<img></img").attr({src: resultObj.team.logo, "class": "object-scale-down"})
+        var logoEl = $("<img>").attr({src: resultObj.team.logo, "class": "object-scale-down"})
 
         var countryEl = $("<p></p>")
         countryEl.text(resultObj.team.country);
@@ -75,12 +75,12 @@ function renderResults(resultObj) {
         var leagueNameEl = $("<h4></h4>")
         leagueNameEl.text(resultObj.league.name);
        
-        var leagueLogo = ("<img></img").attr("src", resultObj.league.logo);
+        var leagueLogo = $("<img>").attr("src", resultObj.league.logo);
 
         var countryEl = $("<p></p>");
         countryEl.text(resultObj.country.name)
        
-        var countryFlag = ("<img></img").attr("src", resultObj.country.flag);
+        var countryFlag = $("<img>").attr("src", resultObj.country.flag);
 
         resultBody.append(leagueNameEl, leagueLogo, countryEl, countryFlag)
 
@@ -112,7 +112,7 @@ function renderResults(resultObj) {
         } else {
             var playerInjuries = $("<p>Player is currently: injured</p>")
         }
-        var playerImgEl = $("<img></img").attr("src", resultObj.player.photo);
+        var playerImgEl = $("<img>").attr("src", resultObj.player.photo);
 
         resultBody.append(playerNameEl, playerAgeEl, playerNationalityEl, playerHieghtEl, playerWeightEl, playerInjuries, playerImgEl);
     }
@@ -128,7 +128,7 @@ function renderResults(resultObj) {
         var abbrevEl = $("<p></p>")
         abbrevEl.text(resultObj.code);
 
-        var flagEl = $("<img></img").attr("src", resultObj.flag);
+        var flagEl = $("<img>").attr("src", resultObj.flag);
         resultBody.append(countryName, abbrevEl, flagEl);
     }
 };
