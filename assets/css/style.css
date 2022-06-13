@@ -99,7 +99,20 @@
     line-height: 1.5;
 }
 
-
+.teamSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.teamSection div{
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+}
+.teamSection h3{
+    text-align: center;
+}
 
 .top5PremierLeague {
     position: relative;
