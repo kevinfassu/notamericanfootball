@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const settings = {
     "async": true,
     "crossDomain": true,
@@ -29,7 +28,6 @@ $.ajax(settings).done(function (response) {
      }
     
 });
-=======
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
@@ -49,4 +47,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
->>>>>>> main
