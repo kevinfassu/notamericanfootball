@@ -149,7 +149,7 @@
         </div>
     </div>
 
-    <section class="teamRender teamCard">
+    <section class="teamRender teamCard2">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" class="star" >
                 <path
@@ -160,15 +160,45 @@
         <img alt="Team Logo" id="teamLogo">
         <h2 class="statistic">Statistics:</h2>
         <div class="teamStats">
+            <div class="goals">
+                <h3>Goal Average</h3>
+                <p>Away: <span id="avgAwayGoals"></span></p>
+                <p>Home: <span id="avgHomeGoals"></span></p>
+                <p>Total: <span id="avgTotalGoals"></span></p>
+            </div>
             <div class="streaks">
-                <h1>2021 Streak</h1>
+                <h3>2021 Streak</h3>
                 <p>Wins: <span id="winStreak"></span></p>
                 <p>Loses: <span id="loseStreak"></span></p>
                 <p>Draws: <span id="drawStreak"></span></p>
             </div>
+            <h3>2021 Win/Lose Stats</h3>
+            <div class="winLossStats">
+                <div class="Stats">
+                    <h4>Draw Stats</h4>
+                    <p>Home: <span id="drawHome"></span></p>
+                    <p>Away: <span id="drawAway"></span></p>
+                    <p>Total: <span id="drawTotal"></span></p>
+
+                </div>
+                <div class="Stats">
+                    <h4>Lost Stats</h4>
+                    <p>Home: <span id="lostHome"></span></p>
+                    <p>Away: <span id="lostAway"></span></p>
+                    <p>Total: <span id="lostTotal"></span></p>
+
+                </div>
+                <div class="Stats">
+                    <h4>Wins Stats</h4>
+                    <p>Home: <span id="winHome"></span></p>
+                    <p>Away: <span id="winAway"></span></p>
+                    <p>Total: <span id="winTotal"></span></p>
+
+                </div>
+            </div>
         </div>
         <div class="leagueDetails">
-            <h1>This team plays in this League</h1>
+            <h3>This team plays in this League</h3>
             <h2 id="leagueName"></h2>
             <img alt="leagueLogo" id="leagueLogo">
             <h3>In the country of: <span id="leagueCountry"></span></h3>
