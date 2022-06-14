@@ -43,7 +43,7 @@ function pullSearchParams() {
     }
 }
 
-
+// Start of data iterator function 
 function dataIterator(resultObj) {
     var dataArray = resultObj;
    
@@ -68,7 +68,7 @@ function dataIterator(resultObj) {
     var winAwayEl = document.getElementById("winAway")
     var winTotalEl = document.getElementById("winTotal")
     teamFavId = resultObj.team.id;
-
+// Assign values to variables for API 
 
     var leagueLogo = resultObj.league.logo.replaceAll("\"", "");
     
@@ -123,7 +123,8 @@ function dataIterator(resultObj) {
     winTotalEl.textContent = winTotal;
 
 }
-
+// End of function
+// Start of render function for all teams
 function displayAllTeam() {
     console.log("DisplayAllTeam Function started")
     document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
@@ -154,7 +155,7 @@ function displayAllTeam() {
 function allTeamIterator(resultObj) {
     if (index === 0) {
         var cardEl =  $("#league1")
-       
+    //    Groups teams by country to confirm accuracy 
 
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
@@ -176,7 +177,7 @@ function allTeamIterator(resultObj) {
 
 
 
-       
+    //    Render loop 
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
            
@@ -597,16 +598,11 @@ return;
 
 //  ------------------------------------------ End of Function --------------------------------
 
-
+// Local Storage function for save My Teams
 function saveLocalStorage(event){
-    $(this).attr("fill", "red")
+    $(this).attr("fill", "red");
     
-   ;
-    // var saveEvent = $(event.target);
-    // var parentSave = saveEvent.parents("section.teamRender.teamCard");
-    // var allSave = parentSave.contents();
-    // console.log(allSave);
-    var teamIdStored= JSON.parse(localStorage.getItem("favedTeam"))||[];
+   var teamIdStored= JSON.parse(localStorage.getItem("favedTeam"))||[];
     
     var newSave= [
         ...teamIdStored,
@@ -620,12 +616,13 @@ function saveLocalStorage(event){
 
 
 
-
+// Fav Button 
 $(".star").on("click",saveLocalStorage);
 $(".star").dblclick(function(){
     $(this).attr("fill", "black")
 });
 
+// Modal Function 
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
