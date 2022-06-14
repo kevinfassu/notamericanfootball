@@ -202,9 +202,10 @@ let button = document.getElementById("no-btn");
 
 btn.onclick = function () {
     modal.style.display = "block";
+    
 }
 
-button.onclick = function () {
+$("x-Btn").onclick = function () {
     modal.style.display = "none";
 }
 
@@ -213,3 +214,14 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+$("#a-z").click(function() {
+    function sort(selector) {
+        $(selector).children("#teamcard").sort(function(a, b) {
+            var A = $(a).text().toUpperCase();
+            var B = $(b).text().toUpperCase();
+            return (A < B) ? -1 : (A > B) ? 1 : 0;
+        }).appendTo(selector);
+    }
+
+});
