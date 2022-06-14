@@ -54,6 +54,17 @@
     line-height: 1.5;
 }
 
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40;
+    align-self: flex-end;
+  }
+  
+
+
 .teamCard {
     width: 300px;
     padding: 15px;
@@ -189,7 +200,9 @@
     background-position: bottom;
 }
 
-
+#teams-caption{
+    font-size: 30px;
+}
 #open-btn {
 margin:auto
 }
@@ -229,8 +242,13 @@ margin:auto
     text-align: center;
 }
 
-
-
+.star{
+    align-self: flex-end;
+}
+.star-fill{
+    fill:yellow;
+    align-self: flex-end;
+}
 @media screen and(max-width: 1500px){
     .card-row {
         grid-template-columns: 25% 25% 
