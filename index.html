@@ -20,7 +20,7 @@
                         <!-- Mobile menu button-->
                         <button type="button"
                             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            aria-controls="mobile-menu" aria-expanded="false">
+                            aria-controls="mobile-menu" aria-expanded="false" id="mobile-btn">
                             <span class="sr-only">Open main menu</span>
                             <!--
               Icon when menu is closed.
@@ -29,14 +29,14 @@
   
               Menu open: "hidden", Menu closed: "block"
             -->
-                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" id="show-mobile"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
 
 
 
-                            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" id="hide-mobile"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -65,7 +65,7 @@
                                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Teams</a>
 
                                 <a href="./assets/pages/players.html"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Players</a>\
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Players</a>
                                  <a href="./assets/pages/myTeams.html"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Teams</a>
                                 
@@ -90,7 +90,7 @@
                         <!-- Search bar with categories and search buttons-->
                         <input type="text" name="searchbar" id="searchbar"
                             class="py-1 focus:outline-none focus:border focus:border-amber-300 rounded pl-1"
-                            placeholder="Search countries,leagues,teams...." size="55">
+                            placeholder="Search countries,leagues,teams....">
                         <div class="relative text-left inline-flex">
                             <!--Dropdown menu button-->
                             <div>
@@ -120,7 +120,7 @@
 
                                         <section id="league-btn"
                                             class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-800 hover:bg-gray-200">
-                                            League
+                                            Leagues
                                         </section>
 
 

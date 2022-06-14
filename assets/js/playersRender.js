@@ -58,7 +58,8 @@ function dataIterator(resultObj) {
 //      console.log(playersImg);
 //      }
     
-//});
+
+
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");

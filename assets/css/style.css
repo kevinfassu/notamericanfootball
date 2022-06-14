@@ -1,11 +1,12 @@
 .card-row{
     display:grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 300px 300px 300px 300px;
     justify-content: space-between;
     align-content: center;
     justify-content: center;
     align-items: stretch;
     justify-items: center;
+    gap: 15px;
 }
 
 .card{
@@ -21,7 +22,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin: 15px 7px 15px 7px;
 }
 
 
@@ -98,7 +99,20 @@
     line-height: 1.5;
 }
 
-
+.teamSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.teamSection div{
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+}
+.teamSection h3{
+    text-align: center;
+}
 
 .top5PremierLeague {
     position: relative;
@@ -192,7 +206,9 @@ margin:auto
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+#searchbar{
+    width: 500px;
+}
 #video-render{
     position: relative;
     bottom: -500px;
@@ -213,20 +229,39 @@ margin:auto
     .card-row {
         grid-template-columns: 25% 25% 
         }
-}
+    .card{
+        width:250px;
+    }
+   
+    }  
 
 
 
 @media screen and (max-width: 992px) {
    .card-row {
     grid-template-columns: 30% 30% 
+ 
     }
-  }
+    #searchbar{
+        width: 300px;
+    }
+    
+    
+}
   
   
   @media screen and (max-width: 768px) {
     .card-row{
         grid-template-columns: 50% 50%;
+    }
+    #searchbar{
+        width: 200px;
+    }
+    .top5PremierLeague{
+        flex-direction: column;
+    }
+    .top5PremierLeague a{
+        margin-bottom: 20px;
     }
   }
   
@@ -234,5 +269,14 @@ margin:auto
   @media screen and (max-width: 576px) {
     .card-row {
         grid-template-columns: 75%
+    }
+    #searchbar{
+        width:150px;
+    }
+    .top5PremierLeague{
+        flex-direction: column;
+    }
+    .top5PremierLeague a{
+        margin-bottom: 20px;
     }
   }

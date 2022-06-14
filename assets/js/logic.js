@@ -163,3 +163,15 @@ $(function() {
 	})
 });
 
+
+	$('#mobile-btn').click(function()
+	{
+		if($("#hide-mobile").hasClass("hidden")){
+			$('#hide-mobile').removeClass("hidden").addClass("block");
+			$('#show-mobile').removeClass("block").addClass("hidden");
+			
+		}
+		
+		
+	})
+
