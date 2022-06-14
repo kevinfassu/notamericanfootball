@@ -110,17 +110,28 @@
     line-height: 1.5;
 }
 
+
 .teamSection {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: relative;
+    top: -280px;
 }
 
-.teamSection head {
-    position: absolute;
-    top: 500px;
-    right: 500px;
+.LeagueBox {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 18px;
+    width: 300px;
+    justify-items: center;
+    box-shadow: gray 3px 3px 3px;
+    background-color: bisque;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
+
 .teamSection div{
     border: 2px solid #CED0CE;
     border-radius: 5px;
