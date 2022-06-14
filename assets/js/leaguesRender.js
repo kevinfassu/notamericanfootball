@@ -18,16 +18,23 @@ $.ajax(settings).done(function (response) {
     console.log(leagueSort.league);
     var nameArray = leagueSort.league.name;
     var flagArray = leagueSort.league.logo;
-    var leagueArray = [];
-    var logoArray = [];
 
-    leagueArray.push(nameArray);
-    logoArray.push(flagArray);
     console.log(nameArray);
     console.log(flagArray);
-     }
-    
+    var cardBody = $("<div>").attr("class" , "card").appendTo(".card-row");
+     var leageName = $("<h3>");
+     leageName.text(nameArray);
+     
+     var flagName = $("<img>").attr("src", flagArray);
+     cardBody.append(flagName , leageName);
+
+
+
+}
+   
 });
+
+
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
