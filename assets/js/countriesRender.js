@@ -4,7 +4,7 @@ const settings = {
     "url": "https://api-football-v1.p.rapidapi.com/v3/countries",
     "method": "GET",
     "headers": {
-        "X-RapidAPI-Key": "7c1d331df8msh9322aee26b0f534p1d832bjsn27c5f09f0a59",
+        "X-RapidAPI-Key": "3bdcf8860cmshea229f372e48696p191768jsn0ba4b3da61e6",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
 };
@@ -25,9 +25,25 @@ $.ajax(settings).done(function (response) {
     logoArray.push(flagArray);
     console.log(nameArray);
     console.log(flagArray);
+    placesSort(nameArray, flagArray)
     }
     
 });
+
+var playerContent = $("#unique")
+function placesSort(nameArray,flagArray) {
+        var countryBody = $("<div>").attr("class", "card").appendTo(playerContent)
+        var countryImg = $("<img>").attr("src", flagArray)
+    
+         var countryName = $("<h2>")
+         countryName.text(nameArray);
+         
+
+    
+        countryBody.append(countryImg, countryName)
+        
+    } 
+
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
