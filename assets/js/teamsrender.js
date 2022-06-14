@@ -629,12 +629,13 @@ let btn = document.getElementById("open-btn");
 
 let button = document.getElementById("no-btn");
 
+let xButton = document.getElementById ("x-btn")
+
 btn.onclick = function () {
     modal.style.display = "block";
-    
 }
 
-$("x-Btn").onclick = function () {
+xButton.onclick = function () {
     modal.style.display = "none";
 }
 
@@ -643,14 +644,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
-$("#a-z").click(function() {
-    function sort(selector) {
-        $(selector).children("#teamcard").sort(function(a, b) {
-            var A = $(a).text().toUpperCase();
-            var B = $(b).text().toUpperCase();
-            return (A < B) ? -1 : (A > B) ? 1 : 0;
-        }).appendTo(selector);
-    }
-
-});

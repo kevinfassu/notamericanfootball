@@ -52,11 +52,13 @@ let btn = document.getElementById("open-btn");
 
 let button = document.getElementById("no-btn");
 
+let xButton = document.getElementById ("x-btn")
+
 btn.onclick = function () {
     modal.style.display = "block";
 }
 
-button.onclick = function () {
+xButton.onclick = function () {
     modal.style.display = "none";
 }
 
