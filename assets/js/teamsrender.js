@@ -1,7 +1,8 @@
-pullSearchParams();
 var sectionEl = $("#topTeams")
 var index = 0;
+var leagueParameter = [39, 78, 140, 88, 262];
 
+pullSearchParams();
 function pullSearchParams() {
     //getting search params out of URL into an array
     var paramsArray = document.location.search.split('&');
@@ -12,6 +13,7 @@ function pullSearchParams() {
     if (paramChecker === '') {
         displayAllTeam();
     } else {
+        document.getElementsByClassName("teamSection")[0].style.visibility = 'hidden';
         console.log(paramsArray);
         var teamId = paramsArray[0].split('=').pop();
         console.log(teamId);
@@ -85,7 +87,6 @@ function displayAllTeam() {
     console.log("DisplayAllTeam Function started")
     document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
 
-    var leagueParameter = [39, 78, 140, 88, 262]
 
     for (let i = 0; i < 5; i++) {
         console.log(leagueParameter[i])
@@ -113,14 +114,21 @@ function allTeamIterator(resultObj) {
     if (index === 0) {
         var cardEl =  $("#league1")
         console.log(resultObj)
+        var leagueParamId = leagueParameter[index];
+        console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
+            console.log(teamParamId)
+            var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
+            var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
             var teamName = resultObj[i].team.name;
             var teamEl = $("<h3>").text(teamName)
             var teamLogo = resultObj[i].team.logo;
             var teamLogoEl = $("<img>").attr("src", teamLogo);
             divEl.append(teamEl, teamLogoEl)
-            cardEl.append(divEl);
+            aEl.append(divEl)
+            cardEl.append(aEl);
             // console.log(teamName)
             // console.log(teamLogo)
         }
@@ -129,14 +137,21 @@ function allTeamIterator(resultObj) {
     } else if (index === 1) {
         var cardEl =  $("#league2")
         console.log(resultObj)
+        var leagueParamId = leagueParameter[index];
+        console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
+            console.log(teamParamId)
+            var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
+            var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
             var teamName = resultObj[i].team.name;
             var teamEl = $("<h3>").text(teamName)
             var teamLogo = resultObj[i].team.logo;
             var teamLogoEl = $("<img>").attr("src", teamLogo);
             divEl.append(teamEl, teamLogoEl)
-            cardEl.append(divEl);
+            aEl.append(divEl)
+            cardEl.append(aEl);
             // console.log(teamName)
             // console.log(teamLogo)
         }
@@ -145,14 +160,21 @@ function allTeamIterator(resultObj) {
     } else if (index === 2) {
         var cardEl =  $("#league3")
         console.log(resultObj)
+        var leagueParamId = leagueParameter[index];
+        console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
+            console.log(teamParamId)
+            var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
+            var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
             var teamName = resultObj[i].team.name;
             var teamEl = $("<h3>").text(teamName)
             var teamLogo = resultObj[i].team.logo;
             var teamLogoEl = $("<img>").attr("src", teamLogo);
             divEl.append(teamEl, teamLogoEl)
-            cardEl.append(divEl);
+            aEl.append(divEl)
+            cardEl.append(aEl);
             // console.log(teamName)
             // console.log(teamLogo)
         }
@@ -161,14 +183,21 @@ function allTeamIterator(resultObj) {
     } else if (index === 3) {
         var cardEl =  $("#league4")
         console.log(resultObj)
+        var leagueParamId = leagueParameter[index];
+        console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
+            console.log(teamParamId)
+            var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
+            var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
             var teamName = resultObj[i].team.name;
             var teamEl = $("<h3>").text(teamName)
             var teamLogo = resultObj[i].team.logo;
             var teamLogoEl = $("<img>").attr("src", teamLogo);
             divEl.append(teamEl, teamLogoEl)
-            cardEl.append(divEl);
+            aEl.append(divEl)
+            cardEl.append(aEl);
             // console.log(teamName)
             // console.log(teamLogo)
         }
@@ -177,16 +206,23 @@ function allTeamIterator(resultObj) {
     } else if (index === 4) {
         var cardEl =  $("#league5")
         console.log(resultObj)
+        var leagueParamId = leagueParameter[index];
+        console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
+            console.log(teamParamId)
+            var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
+            var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
             var teamName = resultObj[i].team.name;
             var teamEl = $("<h3>").text(teamName)
             var teamLogo = resultObj[i].team.logo;
             var teamLogoEl = $("<img>").attr("src", teamLogo);
             divEl.append(teamEl, teamLogoEl)
-            cardEl.append(divEl);
-            // console.log(teamLogo)
+            aEl.append(divEl)
+            cardEl.append(aEl);
             // console.log(teamName)
+            // console.log(teamLogo)
         }
         index++;
         return;
