@@ -24,7 +24,7 @@ function handleSearchFormSubmit(event){
 
 }
 
-
+ 
 
 $('#drop-down-menu section').click(dropDownVal);
 searchSubmit.on("click",handleSearchFormSubmit);

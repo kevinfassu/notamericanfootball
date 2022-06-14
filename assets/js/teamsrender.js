@@ -1,7 +1,7 @@
 var sectionEl = $("#topTeams")
 var index = 0;
 var leagueParameter = [39, 78, 140, 88, 262];
-
+let teamFavId;
 pullSearchParams();
 function pullSearchParams() {
     //getting search params out of URL into an array
@@ -54,6 +54,8 @@ function dataIterator(resultObj) {
     var leagueNameEl = document.getElementById("leagueName")
     var leagueLogoEl = document.getElementById("leagueLogo")
     var leagueCountryEl = document.getElementById("leagueCountry")
+    teamFavId = resultObj.team.id;
+
 
     var leagueLogo = resultObj.league.logo.replaceAll("\"", "");
     console.log(leagueLogo)
@@ -71,6 +73,7 @@ function dataIterator(resultObj) {
     console.log(loseStreak)
     var drawStreak = resultObj.biggest.streak.draws;
     console.log(drawStreak)
+   
 
     teamNameEl.textContent = teamName;
     teamLogoEl.src = teamLogo;
@@ -229,6 +232,33 @@ function allTeamIterator(resultObj) {
     }
 }
 
+function saveLocalStorage(event){
+    $(this).attr("fill", "red")
+    
+   ;
+    // var saveEvent = $(event.target);
+    // var parentSave = saveEvent.parents("section.teamRender.teamCard");
+    // var allSave = parentSave.contents();
+    // console.log(allSave);
+    var teamIdStored= JSON.parse(localStorage.getItem("favedTeam"))||[];
+    
+    var newSave= [
+        ...teamIdStored,
+        teamFavId,
+        
+    ];
+
+    localStorage.setItem("favedTeam", JSON.stringify(newSave));
+
+}
+
+
+
+
+$(".star").on("click",saveLocalStorage);
+$(".star").dblclick(function(){
+    $(this).attr("fill", "black")
+});
 
 let modal = document.getElementById("popup-modal");
 
