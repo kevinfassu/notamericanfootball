@@ -122,14 +122,19 @@ function allTeamIterator(resultObj) {
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
+            console.log("The country is spain with id: " + leagueParamId);
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
+            console.log("The country is Germany with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
+            console.log("The country is Mexico with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
+            console.log("The country is England with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
+            console.log("The country is Netherlands with id: " + leagueParamId);
         }
 
 
@@ -161,19 +166,25 @@ function allTeamIterator(resultObj) {
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
+            console.log("The country is spain with id: " + leagueParamId);
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
+            console.log("The country is Germany with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
+            console.log("The country is Mexico with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
+            console.log("The country is England with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
+            console.log("The country is Netherlands with id: " + leagueParamId);
         }
 
 
         console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
+            var teamParamId = resultObj[i].team.id;
             console.log(teamParamId)
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
@@ -198,14 +209,19 @@ function allTeamIterator(resultObj) {
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
+            console.log("The country is spain with id: " + leagueParamId);
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
+            console.log("The country is Germany with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
+            console.log("The country is Mexico with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
+            console.log("The country is England with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
+            console.log("The country is Netherlands with id: " + leagueParamId);
         }
 
 
@@ -238,14 +254,19 @@ function allTeamIterator(resultObj) {
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
+            console.log("The country is spain with id: " + leagueParamId);
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
+            console.log("The country is Germany with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
+            console.log("The country is Mexico with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
+            console.log("The country is England with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
+            console.log("The country is Netherlands with id: " + leagueParamId);
         }
 
 
@@ -276,14 +297,19 @@ function allTeamIterator(resultObj) {
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
+            console.log("The country is spain with id: " + leagueParamId);
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
+            console.log("The country is Germany with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
+            console.log("The country is Mexico with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
+            console.log("The country is England with id: " + leagueParamId);
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
+            console.log("The country is Netherlands with id: " + leagueParamId);
         }
 
 
