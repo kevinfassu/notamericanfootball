@@ -8,7 +8,7 @@ let htmlChamp;
 let idArray
 
 searchArray();
-
+// Grabbing top teams from API
 function searchArray() {
 	let standingSort;
 	const settings = {
@@ -46,7 +46,7 @@ function searchArray() {
 		console.log(champArray);
 	});
 }
-
+// Render results top five teams 
 function printResults() {
 
 	console.log(index);
@@ -108,15 +108,7 @@ function printResults() {
 	return;
 }
 
-
-// const twtOptions = {
-// 		method: "GET",
-// 	 	headers: {
-// 				'Authorization': 'Bearer' + 'AAAAAAAAAAAAAAAAAAAAAH01dgEAAAAADrG3yG8hXBXxOYFCAuTnI2RrB74%3DfrbGgECz6VCpDY40FDEqtaonGivL50BO9lL955EfqkDhSkbmw1'
-// 			}
-//  }
-
-// // //need to grab cors proxy again
+// Grab video infromation from API 
   fetch('https://www.scorebat.com/video-api/v3/feed/?token=MjA4MzJfMTY1NTA5MjAzOV84YWM3ZGQ3MzA5NDY2YjIzMTIwZjAzYTNiNDhhNmYxMWFmYzNlYTBm')
   .then(response => response.json())
   .then(data => {
@@ -125,7 +117,7 @@ function printResults() {
 	}
   });
 
-
+// Render Videos 
 function renderVids(resultObj){
 	var videoBody = $("<div></div").attr("class", "card").appendTo("#video-card");
         var videoCard = $("<div></div>").appendTo(videoBody);
@@ -145,14 +137,11 @@ function renderVids(resultObj){
   
 
 
-// iterate through for competition, title, date, video.embed
-
-//create divs .card class
-//append data to divs
 
 
 
 
+// Event Listener from drop down button 
 $(function() {
 	$('#dropdownBtn').click(function()
 	{
