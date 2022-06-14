@@ -8,19 +8,17 @@ const settings = {
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
 };
-
+// Rendered leage name and logo from API 
 $.ajax(settings).done(function (response) {
-    console.log(response);
-    //console.log(leagueSort);
+  
 
     for (let i = 0; i < 16; i++) {
     var leagueSort = response.response[i];
-    console.log(leagueSort.league);
+   
     var nameArray = leagueSort.league.name;
     var flagArray = leagueSort.league.logo;
 
-    console.log(nameArray);
-    console.log(flagArray);
+   
     var cardBody = $("<div>").attr("class" , "card").appendTo(".card-row");
      var leageName = $("<h3>");
      leageName.text(nameArray);
@@ -34,7 +32,7 @@ $.ajax(settings).done(function (response) {
    
 });
 
-
+// Modal Function 
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");

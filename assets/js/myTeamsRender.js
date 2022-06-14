@@ -1,8 +1,8 @@
 
-
+// Grabs local storage and fetch request using information 
 function myTeamsRender() {
     var teamsIdRender = JSON.parse(localStorage.getItem("favedTeam"));
-    console.log(teamsIdRender);
+  
 
     for (i = 0; i < teamsIdRender.length; i++) {
         var myTeamsUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?id=${teamsIdRender[i]}`;
@@ -24,13 +24,14 @@ function myTeamsRender() {
 
 myTeamsRender();
 
+// Render results function
 function appendCard (resultObj)  {
-    console.log(resultObj);
+   
 var teamBody = $("<div>").attr("class","card").appendTo("#team-card");
 var teamName = $("<h3>");
 teamName.text(resultObj.team.name);
 
-console.log(resultObj.team.name);
+
 
 var teamCountry = $("<h4>");
 teamCountry.text(resultObj.team.country);

@@ -7,23 +7,23 @@ pullSearchParams();
 function pullSearchParams() {
     //getting search params out of URL into an array
     var paramsArray = document.location.search.split('&');
-    console.log(paramsArray);
+    
     //Getting input and type values
     var paramChecker = document.location.search;
-    console.log(paramChecker)
+    
     if (paramChecker === '') {
         displayAllTeam();
     } else {
         document.getElementsByClassName("teamSection")[0].style.visibility = 'hidden';
-        console.log(paramsArray);
+      
         var teamId = paramsArray[0].split('=').pop();
-        console.log(teamId);
+        
         var leagueId = paramsArray[1].split('=').pop();
-        console.log(leagueId);
+      
 
         // searchApi(teamId, leagueId)
-        console.log(teamId)
-        console.log(leagueId)
+        
+        
         var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?season=2021&team=${teamId}&league=${leagueId}`
 
         const newRequest = new Request(teamURL, {
@@ -38,15 +38,15 @@ function pullSearchParams() {
             .then(response => response.json())
             .then(data => {
                 dataIterator(data.response);
-                console.log(data)
+                
             })
     }
 }
 
-
+// Start of data iterator function 
 function dataIterator(resultObj) {
     var dataArray = resultObj;
-    console.log(dataArray);
+   
     var teamNameEl = document.getElementById("teamName")
     var teamLogoEl = document.getElementById("teamLogo")
     var winStreakEl = document.getElementById("winStreak")
@@ -68,24 +68,24 @@ function dataIterator(resultObj) {
     var winAwayEl = document.getElementById("winAway")
     var winTotalEl = document.getElementById("winTotal")
     teamFavId = resultObj.team.id;
-
+// Assign values to variables for API 
 
     var leagueLogo = resultObj.league.logo.replaceAll("\"", "");
-    console.log(leagueLogo)
+    
     var leagueName = resultObj.league.name.replaceAll("\"", "");
-    console.log(leagueName)
+    
     var leagueCountry = resultObj.league.country.replaceAll("\"", "");
-    console.log(leagueCountry)
+   
     var teamName = resultObj.team.name.replaceAll("\"", "");
-    console.log(teamName)
+   
     var teamLogo = resultObj.team.logo.replaceAll("\"", "");
-    console.log(teamLogo)
+   
     var winStreak = resultObj.biggest.streak.wins;
-    console.log(winStreak)
+    
     var loseStreak = resultObj.biggest.streak.loses;
-    console.log(loseStreak)
+    
     var drawStreak = resultObj.biggest.streak.draws;
-    console.log(drawStreak)
+    
     var teamGoalAway = resultObj.goals.against.average.away;
     var teamGoalHome = resultObj.goals.against.average.home;
     var teamGoalTotal = resultObj.goals.against.average.total;
@@ -123,14 +123,15 @@ function dataIterator(resultObj) {
     winTotalEl.textContent = winTotal;
 
 }
-
+// End of function
+// Start of render function for all teams
 function displayAllTeam() {
     console.log("DisplayAllTeam Function started")
     document.getElementsByClassName("teamRender")[0].style.visibility = 'hidden';
 
 
     for (let i = 0; i < 5; i++) {
-        console.log(leagueParameter[i])
+      
         var teamURL = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${leagueParameter[i]}&season=2021`
 
         const newRequest = new Request(teamURL, {
@@ -145,7 +146,7 @@ function displayAllTeam() {
             .then(response => response.json())
             .then(data => {
                 allTeamIterator(data.response);
-                console.log(data)
+                
             })
     }
 }
@@ -154,32 +155,32 @@ function displayAllTeam() {
 function allTeamIterator(resultObj) {
     if (index === 0) {
         var cardEl =  $("#league1")
-        console.log(resultObj)
+    //    Groups teams by country to confirm accuracy 
 
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
-            console.log("The country is spain with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
-            console.log("The country is Germany with id: " + leagueParamId);
+          
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
-            console.log("The country is Mexico with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
-            console.log("The country is England with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
-            console.log("The country is Netherlands with id: " + leagueParamId);
+            
         }
 
 
 
-        console.log("League ID: " + leagueParamId)
+    //    Render loop 
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
-            console.log(teamParamId)
+           
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
@@ -198,31 +199,31 @@ function allTeamIterator(resultObj) {
         return;
     } else if (index === 1) {
         var cardEl =  $("#league2")
-        console.log(resultObj)
+        
 
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
-            console.log("The country is spain with id: " + leagueParamId);
+           
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
-            console.log("The country is Germany with id: " + leagueParamId);
+           
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
-            console.log("The country is Mexico with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
-            console.log("The country is England with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
-            console.log("The country is Netherlands with id: " + leagueParamId);
+        
         }
 
 
-        console.log("League ID: " + leagueParamId)
+       
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
-            console.log(teamParamId)
+           
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
@@ -241,33 +242,32 @@ function allTeamIterator(resultObj) {
         return;
     } else if (index === 2) {
         var cardEl =  $("#league3")
-        console.log(resultObj)
-
+        
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
-            console.log("The country is spain with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
-            console.log("The country is Germany with id: " + leagueParamId);
+          
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
-            console.log("The country is Mexico with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
-            console.log("The country is England with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
-            console.log("The country is Netherlands with id: " + leagueParamId);
+           
         }
 
 
 
 
-        console.log("League ID: " + leagueParamId)
+        
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
-            console.log(teamParamId)
+            
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
@@ -286,31 +286,30 @@ function allTeamIterator(resultObj) {
         return;
     } else if (index === 3) {
         var cardEl =  $("#league4")
-        console.log(resultObj)
-
+      
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
-            console.log("The country is spain with id: " + leagueParamId);
+           
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
-            console.log("The country is Germany with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
-            console.log("The country is Mexico with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
-            console.log("The country is England with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
-            console.log("The country is Netherlands with id: " + leagueParamId);
+            
         }
 
 
         console.log("League ID: " + leagueParamId)
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
-            console.log(teamParamId)
+            
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
@@ -329,33 +328,33 @@ function allTeamIterator(resultObj) {
         return;
     } else if (index === 4) {
         var cardEl =  $("#league5")
-        console.log(resultObj)
+        
 
         var leagueParamId = 0;
         if (resultObj[0].team.country === "Spain") {
             leagueParamId = 140;
-            console.log("The country is spain with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country === "Germany") {
             leagueParamId = 78;
-            console.log("The country is Germany with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "Mexico") {
             leagueParamId = 262;
-            console.log("The country is Mexico with id: " + leagueParamId);
+            
         } else if (resultObj[0].team.country ===  "England") {
             leagueParamId = 39;
-            console.log("The country is England with id: " + leagueParamId);
+           
         } else if (resultObj[0].team.country ===  "Netherlands") {
             leagueParamId = 88;
-            console.log("The country is Netherlands with id: " + leagueParamId);
+            
         }
 
 
 
 
-        console.log("League ID: " + leagueParamId)
+        
         for (let i = 0; i < resultObj.length; i++) {
             var teamParamId = resultObj[i].team.id;
-            console.log(teamParamId)
+            
             var sendAwayURL = './teams.html?teamid=' + teamParamId + "&league=" + leagueParamId;
             var aEl = $("<a>").attr("href", sendAwayURL)
             var divEl = $("<div>")
@@ -382,14 +381,12 @@ function allTeamIterator(resultObj) {
 
 function leagueFinderMaker(resultObj) {
     var leagueIdCheck = ["Spain","Netherlands","Germany", "England","Mexico"];
-    console.log("leagueFinderMaker function has started")
-    console.log(resultObj)
-    console.log(resultObj[4].team.country)
+    
     if (leagueIdCheck[0] === resultObj[4].team.country) {
-        console.log("Country Found: Spain")
+        
         var leagueName = "La Liga";
         var leagueLogo = "https://media.api-sports.io/football/leagues/140.png";
-        console.log("Current dataIndex: " + dataIndex)
+        
         if (dataIndex === 0) {
             var cardEl1 =  $("#league1Header")
             var h1El = $("<h1>").text(leagueName);
@@ -428,10 +425,10 @@ function leagueFinderMaker(resultObj) {
 
 
     } else if (leagueIdCheck[1] === resultObj[4].team.country) {
-        console.log("Country Found: Netherlands")
+        
         var leagueName = "Eredivisie";
         var leagueLogo = "https://media.api-sports.io/football/leagues/88.png";
-        console.log("Current dataIndex: " + dataIndex)
+     
         if (dataIndex === 0) {
             var cardEl1 =  $("#league1Header")
             var h1El = $("<h1>").text(leagueName);
@@ -470,10 +467,10 @@ function leagueFinderMaker(resultObj) {
 
 
     } else if (leagueIdCheck[2] === resultObj[4].team.country) {
-        console.log("Country Found: Germany")
+        
         var leagueName = "Bundesliga 1";
         var leagueLogo = "https://media.api-sports.io/football/leagues/78.png";
-        console.log("Current dataIndex: " + dataIndex)
+       
         if (dataIndex === 0) {
             var cardEl1 =  $("#league1Header")
             var h1El = $("<h1>").text(leagueName);
@@ -512,10 +509,10 @@ function leagueFinderMaker(resultObj) {
 
 
     } else if (leagueIdCheck[3] === resultObj[4].team.country) {
-        console.log("Country Found: England")
+        
         var leagueName = "Premier League";
         var leagueLogo = "https://media.api-sports.io/football/leagues/39.png";
-        console.log("Current dataIndex: " + dataIndex)
+        
         if (dataIndex === 0) {
             var cardEl1 =  $("#league1Header")
             var h1El = $("<h1>").text(leagueName);
@@ -554,10 +551,10 @@ function leagueFinderMaker(resultObj) {
 
 
     } else if (leagueIdCheck[4] === resultObj[4].team.country) {
-        console.log("Country Found: Mexico")
+        
         var leagueName = "Liga MX";
         var leagueLogo = "https://media.api-sports.io/football/leagues/262.png";
-        console.log("Current dataIndex: " + dataIndex)
+        
         if (dataIndex === 0) {
             var cardEl1 =  $("#league1Header")
             var h1El = $("<h1>").text(leagueName);
@@ -601,16 +598,11 @@ return;
 
 //  ------------------------------------------ End of Function --------------------------------
 
-
+// Local Storage function for save My Teams
 function saveLocalStorage(event){
-    $(this).attr("fill", "red")
+    $(this).attr("fill", "red");
     
-   ;
-    // var saveEvent = $(event.target);
-    // var parentSave = saveEvent.parents("section.teamRender.teamCard");
-    // var allSave = parentSave.contents();
-    // console.log(allSave);
-    var teamIdStored= JSON.parse(localStorage.getItem("favedTeam"))||[];
+   var teamIdStored= JSON.parse(localStorage.getItem("favedTeam"))||[];
     
     var newSave= [
         ...teamIdStored,
@@ -624,12 +616,13 @@ function saveLocalStorage(event){
 
 
 
-
+// Fav Button 
 $(".star").on("click",saveLocalStorage);
 $(".star").dblclick(function(){
     $(this).attr("fill", "black")
 });
 
+// Modal Function 
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");

@@ -5,6 +5,7 @@ const settings = {
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
 };
+// fetching player information by league ID
 var leagueId = [39, 78, 88]
 for (i = 0; i < leagueId.length; i++)
 var url = `https://api-football-v1.p.rapidapi.com/v3/players?season=2021&league=${leagueId[0]}`
@@ -16,6 +17,7 @@ fetch(url, settings)
 
 
 })
+// Render player information 
 var playerContent = $("#unique")
 function dataIterator(resultObj) {
     for (let i = 0; i < resultObj.length; i++) {
@@ -38,7 +40,7 @@ function dataIterator(resultObj) {
 
 
 
-
+// Modal Function 
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");

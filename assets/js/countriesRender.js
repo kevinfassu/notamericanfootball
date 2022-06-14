@@ -9,6 +9,7 @@ const settings = {
     }
 };
 
+// Grabs countries informationn and renders on page 
 $.ajax(settings).done(function (response) {
     console.log(response);
     countriesSort = response.response;
@@ -44,6 +45,7 @@ function placesSort(nameArray,flagArray) {
         
     } 
 
+    // Modal function 
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
