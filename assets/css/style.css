@@ -79,8 +79,48 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    text-align: center;
+}
+.teamCard2 {
+    width: 800px;
+    padding: 15px;
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px#C1C3C1;
+    display: flex;
+    flex: 0 3 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
 }
 
+.teamCard2 h3 {
+    font-size: larger;
+}
+
+.winLossStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.Stats {
+        padding-right: 10px;
+}
+
+.Stats h4 {
+    font-size: x-large;
+}
+
+.leagueDetails h3 {
+    font-size: larger;
+    position: relative;
+    right: 20px;
+}
 
 .teamCard h3{
     font-family: 'Karla',sans-serif;
@@ -110,11 +150,28 @@
     line-height: 1.5;
 }
 
+
 .teamSection {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: relative;
+    top: -280px;
 }
+
+.LeagueBox {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 18px;
+    width: 300px;
+    justify-items: center;
+    box-shadow: gray 3px 3px 3px;
+    background-color: bisque;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 .teamSection div{
     border: 2px solid #CED0CE;
     border-radius: 5px;

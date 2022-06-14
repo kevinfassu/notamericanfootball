@@ -148,8 +148,8 @@
             </div>
         </div>
     </div>
-<!-- Main Team Card -->
-    <section class="teamRender teamCard">
+
+    <section class="teamRender teamCard2">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" class="star" >
                 <path
@@ -160,55 +160,67 @@
         <img alt="Team Logo" id="teamLogo">
         <h2 class="statistic">Statistics:</h2>
         <div class="teamStats">
+            <div class="goals">
+                <h3>Goal Average</h3>
+                <p>Away: <span id="avgAwayGoals"></span></p>
+                <p>Home: <span id="avgHomeGoals"></span></p>
+                <p>Total: <span id="avgTotalGoals"></span></p>
+            </div>
             <div class="streaks">
-                <h1>2021 Streak</h1>
+                <h3>2021 Streak</h3>
                 <p>Wins: <span id="winStreak"></span></p>
                 <p>Loses: <span id="loseStreak"></span></p>
                 <p>Draws: <span id="drawStreak"></span></p>
             </div>
+            <h3>2021 Win/Lose Stats</h3>
+            <div class="winLossStats">
+                <div class="Stats">
+                    <h4>Draw Stats</h4>
+                    <p>Home: <span id="drawHome"></span></p>
+                    <p>Away: <span id="drawAway"></span></p>
+                    <p>Total: <span id="drawTotal"></span></p>
+
+                </div>
+                <div class="Stats">
+                    <h4>Lost Stats</h4>
+                    <p>Home: <span id="lostHome"></span></p>
+                    <p>Away: <span id="lostAway"></span></p>
+                    <p>Total: <span id="lostTotal"></span></p>
+
+                </div>
+                <div class="Stats">
+                    <h4>Wins Stats</h4>
+                    <p>Home: <span id="winHome"></span></p>
+                    <p>Away: <span id="winAway"></span></p>
+                    <p>Total: <span id="winTotal"></span></p>
+
+                </div>
+            </div>
         </div>
         <div class="leagueDetails">
-            <h1>This team plays in this League</h1>
+            <h3>This team plays in this League</h3>
             <h2 id="leagueName"></h2>
             <img alt="leagueLogo" id="leagueLogo">
             <h3>In the country of: <span id="leagueCountry"></span></h3>
         </div>
     </section>
+
     <section class="teamSection" id="topTeams">
         <section class="teamcard" id="league1">
-<!-- Teams Render Grid -->
-            <head>
-                <h1>Premier League</h1>
-                <img src="https://media.api-sports.io/football/leagues/39.png" alt="The Premier League Logo">
-            </head>
+            <header class="LeagueBox" id="league1Header"></header>
         </section>
         <section class="teamcard" id="league2">
-
-            <head>
-                <h1>Bundesliga 1</h1>
-                <img src="https://media.api-sports.io/football/leagues/78.png" alt="The Bundesliga 1 Logo">
-            </head>
+            <header class="LeagueBox" id="league2Header"></header>
         </section>
         <section class="teamcard" id="league3">
-
-            <head>
-                <h1>La Liga</h1>
-                <img src="https://media.api-sports.io/football/leagues/140.png" alt="The La Liga Logo">
-            </head>
+            <header class="LeagueBox" id="league3Header"></header>
         </section>
         <section class="teamcard" id="league4">
-
-            <head>
-                <h1>Eredivisie</h1>
-                <img src="https://media.api-sports.io/football/leagues/88.png" alt="The Eredivisie Logo">
-            </head>
+            <header class="LeagueBox" id="league4Header"></header>
         </section>
         <section class="teamcard" id="league5">
+            <header class="LeagueBox" id="league5Header"></header>
 
-            <head>
-                <h1>Liga MX</h1>
-                <img src="https://media.api-sports.io/football/leagues/262.png" alt="The Liga MX Logo">
-            </head>
         </section>
     </section>
 
