@@ -79,8 +79,48 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    text-align: center;
+}
+.teamCard2 {
+    width: 800px;
+    padding: 15px;
+    border: 2px solid #CED0CE;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px#C1C3C1;
+    display: flex;
+    flex: 0 3 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
 }
 
+.teamCard2 h3 {
+    font-size: larger;
+}
+
+.winLossStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.Stats {
+        padding-right: 10px;
+}
+
+.Stats h4 {
+    font-size: x-large;
+}
+
+.leagueDetails h3 {
+    font-size: larger;
+    position: relative;
+    right: 20px;
+}
 
 .teamCard h3{
     font-family: 'Karla',sans-serif;

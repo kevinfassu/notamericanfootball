@@ -55,6 +55,18 @@ function dataIterator(resultObj) {
     var leagueNameEl = document.getElementById("leagueName")
     var leagueLogoEl = document.getElementById("leagueLogo")
     var leagueCountryEl = document.getElementById("leagueCountry")
+    var teamGoalAwayEl = document.getElementById("avgAwayGoals")
+    var teamGoalHomeEl = document.getElementById("avgHomeGoals")
+    var teamGoalTotalEl = document.getElementById("avgTotalGoals")
+    var drawHomeEl = document.getElementById("drawHome")
+    var drawAwayEl = document.getElementById("drawAway")
+    var drawTotalEl = document.getElementById("drawTotal")
+    var lostHomeEl = document.getElementById("lostHome")
+    var lostAwayEl = document.getElementById("lostAway")
+    var lostTotalEl = document.getElementById("lostTotal")
+    var winHomeEl = document.getElementById("winHome")
+    var winAwayEl = document.getElementById("winAway")
+    var winTotalEl = document.getElementById("winTotal")
     teamFavId = resultObj.team.id;
 
 
@@ -74,6 +86,19 @@ function dataIterator(resultObj) {
     console.log(loseStreak)
     var drawStreak = resultObj.biggest.streak.draws;
     console.log(drawStreak)
+    var teamGoalAway = resultObj.goals.against.average.away;
+    var teamGoalHome = resultObj.goals.against.average.home;
+    var teamGoalTotal = resultObj.goals.against.average.total;
+    var drawHome = resultObj.fixtures.draws.home;
+    var drawAway = resultObj.fixtures.draws.away;
+    var drawTotal = resultObj.fixtures.draws.total;
+    var lostHome = resultObj.fixtures.loses.home;
+    var lostAway = resultObj.fixtures.loses.away;
+    var lostTotal = resultObj.fixtures.loses.total;
+    var winHome = resultObj.fixtures.wins.home;
+    var winAway = resultObj.fixtures.wins.away;
+    var winTotal = resultObj.fixtures.wins.total;
+    
    
 
     teamNameEl.textContent = teamName;
@@ -84,6 +109,18 @@ function dataIterator(resultObj) {
     leagueNameEl.textContent = leagueName;
     leagueLogoEl.src = leagueLogo;
     leagueCountryEl.textContent = leagueCountry;
+    teamGoalAwayEl.textContent = teamGoalAway;
+    teamGoalHomeEl.textContent = teamGoalHome;
+    teamGoalTotalEl.textContent = teamGoalTotal;
+    drawHomeEl.textContent = drawHome;
+    drawAwayEl.textContent = drawAway;
+    drawTotalEl.textContent = drawTotal;
+    lostHomeEl.textContent = lostHome;
+    lostAwayEl.textContent = lostAway;
+    lostTotalEl.textContent = lostTotal;
+    winHomeEl.textContent = winHome;
+    winAwayEl.textContent = winAway;
+    winTotalEl.textContent = winTotal;
 
 }
 
