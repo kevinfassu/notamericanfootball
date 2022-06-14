@@ -23,7 +23,6 @@ function dataIterator(resultObj) {
         var playerbody = $("<div>").attr("class", "card").appendTo(playerContent)
         var playersImg = $("<img>").attr("src", resultObj[i].player.photo)
     
-<<<<<<< HEAD
          var playersName = $("<h2>")
          playersName.text(resultObj[i].player.name);
          
@@ -40,29 +39,6 @@ function dataIterator(resultObj) {
 
 
 
-// $.ajax(settings).done(function (response) {
-//     console.log(response);
-    
-//     // console.log(playersSort)
-//      for (let i = 0; i < 16; i++) {
-//      var playersSort = response.response[i];
-//      console.log(playersSort.player);
-//      console.log(playersSort.statistics);
-
-
-
-//      teamArray.push(teamName);
-//      playerArray.push(playersName);
-//      imgArray.push(playersImg);
-//      console.log(teamName);
-//      console.log(playersName);
-//      console.log(playersImg);
-//      }
-    
-//});
-=======
-});
->>>>>>> 11e561be503489da58566eb0813527435aa8855e
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
