@@ -23,6 +23,7 @@ function dataIterator(resultObj) {
         var playerbody = $("<div>").attr("class", "card").appendTo(playerContent)
         var playersImg = $("<img>").attr("src", resultObj[i].player.photo)
     
+<<<<<<< HEAD
          var playersName = $("<h2>")
          playersName.text(resultObj[i].player.name);
          
@@ -59,6 +60,9 @@ function dataIterator(resultObj) {
 //      }
     
 //});
+=======
+});
+>>>>>>> 11e561be503489da58566eb0813527435aa8855e
 let modal = document.getElementById("popup-modal");
 
 let btn = document.getElementById("open-btn");
