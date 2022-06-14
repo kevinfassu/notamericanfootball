@@ -194,7 +194,9 @@
     background-position: bottom;
 }
 
-
+#teams-caption{
+    font-size: 30px;
+}
 #open-btn {
 margin:auto
 }
