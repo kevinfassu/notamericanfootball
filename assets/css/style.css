@@ -104,6 +104,12 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.teamSection head {
+    position: absolute;
+    top: 500px;
+    right: 500px;
+}
 .teamSection div{
     border: 2px solid #CED0CE;
     border-radius: 5px;
