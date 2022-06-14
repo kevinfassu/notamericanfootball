@@ -1,6 +1,7 @@
 var searchSubmit = $("#search-submit");
 let type;
 
+// Grabbing inputs from search bar and sending them to the window 
 function dropDownVal(event){
 	var	categoryCapture = event.target;
      type = $(categoryCapture).text().trim();
@@ -14,9 +15,7 @@ function handleSearchFormSubmit(event){
 	var inputSearch = $('#searchbar').val();
 	 var typeSearch = type;
 
-	// if (!inputSearch){
-	// 	return false;
-	// }
+	
 
 	 var queryString =  './searchResults.html?endpoint=' + typeSearch + '&search=' + inputSearch;
 	 location.assign(queryString);

@@ -1,6 +1,6 @@
 var resultTitleEl = $("#search-title");
 var resultContentEl = $('#search-content');
-
+// Take variables from url and pass into search pull params function 
 function pullSearchParams() {
     //getting search params out of URL into an array
     var paramsArray = document.location.search.split('&');
@@ -15,6 +15,7 @@ function pullSearchParams() {
 }
 pullSearchParams();
 
+// Grab variables for display on API
 function searchApi(searchType, searchInput) {
     //set up url for fetch request
     var searchUrl = `https://api-football-v1.p.rapidapi.com/v3/${searchType}?search=${searchInput}`;
@@ -40,8 +41,9 @@ function searchApi(searchType, searchInput) {
         })
 };  
 
+// Render elements for the card 
 function renderResults(resultObj) {
-    console.log(resultObj);
+   
     if ("team" in resultObj) {
         var resultBody = $("<div></div").attr("class", "card").appendTo("#search-content");
         var resultsCard = $("<div></div>").appendTo(resultBody);
